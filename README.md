@@ -8,4 +8,6 @@ webapp video player with built in keyboard control picture in picture mode autop
 
 [version 1.0.0](shebavideo.github.io/)
 
+[version 1.0.1](shebavideos.github.io) recommended version
+
             
