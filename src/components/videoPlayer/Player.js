@@ -7,7 +7,6 @@ import { getState, subscribe, watchNext} from "../../context/player/State";
 const temp = document.createElement('template');
 temp.innerHTML = `
 <style>
-    @import url('https://fonts.googleapies.com/css2?family=Comic+Neue&display=swap');
     ${styles()}
 </style>
 <div id="videoPlayer"> 
@@ -59,7 +58,7 @@ class Player extends HTMLElement {
     
         document.onkeydown = e => {
             e.stopImmediatePropagation();
-console.dir(e.key)
+
             if(e.key === "ArrowRight"){
                 keys[e.key]("forward");
             }else if(e.key === "ArrowLeft"){

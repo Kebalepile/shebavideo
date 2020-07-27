@@ -1,13 +1,19 @@
+
 import PrettyJSON from "../utils/PrettyJSON";
+import customFont from "../utils/Righteous-Regular.ttf";
 const temp = document.createElement('template');
 temp.innerHTML = `
 <style>
+@font-face{
+    font-family: customFont;
+    src: url(${customFont});
+    }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color:#00ccff;
-    font-family: 'Comic Neue', cursive;
+    font-family: customFont;
 }
 textarea{
     position: fixed; 
@@ -15,8 +21,8 @@ textarea{
     overflow-y:hidden;
     right:calc(50% - 200px);
     top:calc(50% - 270px);
-    font-size: 13px;
-    padding:10px;
+    font-size: 0.89em;
+    padding:5px;
     width:400px;
     height:540px;
     word-break: break-word;

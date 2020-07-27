@@ -16,7 +16,6 @@ import {
 const temp = document.createElement('template');
 temp.innerHTML = `
 <style>
-    @import url('https://fonts.googleapies.com/css2?family=Comic+Neue&display=swap');
     ${styles()}
 </style>
 <section id="videoPlaylist"> 

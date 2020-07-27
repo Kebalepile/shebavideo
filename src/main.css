@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapies.com/css2?family=Comic+Neue&display=swap');
+
+
+@font-face{
+    font-family: customFont;
+    src: url('./components/utils/Righteous-Regular.ttf');
+    }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: #ffff;
-    font-family: 'Comic Neue', cursive;
+    font-family: customFont;
 }
 
 body{

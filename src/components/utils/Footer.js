@@ -1,23 +1,25 @@
 "strict mode"
-
+import customFont from "./Righteous-Regular.ttf";
 const temp = document.createElement('template');
 temp.innerHTML = `
 <style>
-/* for all media queries*/
-@import url('https://fonts.googleapies.com/css2?family=Comic+Neue&display=swap');
-    * {
+    @font-face{
+        font-family: customFont;
+        src: url(${customFont});
+    } 
+  * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         color: #ffff;
-        font-family: 'Comic Neue', cursive;
+        font-family: customFont;
     }
     
     footer {
         position: fixed;
         right:calc(50% - 50px);
         bottom: 20px;
-        font-size: 13px;
+        font-size: 0.75em;
         width:100px;
         text-align:center;
         z-index:2;

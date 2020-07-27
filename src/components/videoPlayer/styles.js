@@ -1,11 +1,17 @@
+import customFont from "../utils/Righteous-Regular.ttf";
 export default () => {
+  
   return (`
+    @font-face{
+        font-family: customFont;
+        src: url(${customFont});
+      } 
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         color: #ffff;
-        font-family: 'Comic Neue', cursive;
+        font-family: customFont;
     }
 
     /*mobile version*/
@@ -219,11 +225,5 @@ export default () => {
      height:25px;
     }
     
-    /* Show the dropup menu on hover */
-
-
-    /*tablet version*/
-    /*pc version*/
- 
     `);
 }

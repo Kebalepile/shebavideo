@@ -1,5 +1,11 @@
+import customFont from "../utils/Righteous-Regular.ttf";
+
 export default () => {
     return (`
+    @font-face{
+        font-family: customFont;
+        src: url(${customFont});
+      } 
     * {
         box-sizing: border-box;
         margin: 0;
@@ -49,7 +55,7 @@ export default () => {
         grid-column:2/13;
         grid-row: 11;
         text-align:right;
-        font-size:12px;
+        font-size:0.75em;
         background:#222;
         padding:1px;
         overflow:hidden;

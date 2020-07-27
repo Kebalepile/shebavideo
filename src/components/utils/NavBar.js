@@ -4,17 +4,22 @@ import { uploadVideos } from "../../context/videos/State";
 import { nanoid } from "nanoid";
 import { setAutoplay, getState } from "../../context/player/State";
 import upload from "./upload_video.svg";
+import customFont from "./Righteous-Regular.ttf";
 
 const temp = document.createElement('template');
 temp.innerHTML = `
 <style>
-@import url('https://fonts.googleapies.com/css2?family=Comic+Neue&display=swap');
+    @font-face{
+        font-family: customFont;
+        src: url(${customFont});
+        } 
+        
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         color: #ffff;
-        font-family: 'Comic Neue', cursive;
+        font-family: customFont;
     }
 
     nav {
@@ -37,6 +42,7 @@ temp.innerHTML = `
         height:30px;
         width:60px;
         background-color:#008CFF;
+        font-size: 0.95em;
     }
     /*autoplay checkbox custom style.*/
     .slider {
