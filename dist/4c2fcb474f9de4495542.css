@@ -1,0 +1,34 @@
+
+
+@font-face{
+    font-family: customFont;
+    src: url(fd0110471f2228c1808a75b977150a0a.ttf);
+    }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #ffff;
+    font-family: customFont;
+}
+
+body{
+    scrollbar-width: thin;          /* "auto" or "thin"  */
+    scrollbar-color: #008CFF transparent;  
+    background-color: #222;
+    
+}
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+    
+    background-color: #008CFF;    /* color of the scroll thumb */
+    border-radius: 2px;       /* roundness of the scroll thumb */
+    border: 3px solid transparent;  /* creates padding around scroll thumb */
+}
+
