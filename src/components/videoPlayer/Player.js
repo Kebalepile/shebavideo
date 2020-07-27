@@ -49,24 +49,23 @@ class Player extends HTMLElement {
             video = root.querySelector('video'),
             keys = {
 
-                80: pip,
-                70: fullscreen,
-                40: playpause,
-                32: playpause,
-                13: playpause,
-                39: skip,
-                37: skip
+                p: pip,
+                f: fullscreen,
+                ArrowDown: playpause,
+                Enter: playpause,
+                ArrowRight: skip,
+                ArrowLeft: skip
             }
     
         document.onkeydown = e => {
             e.stopImmediatePropagation();
-
-            if(e.keyCode === 39){
-                keys[e.keyCode]("forward");
-            }else if(e.keyCode === 37){
-                keys[e.keyCode]("backward");
-            }else if (/(80|70|40|32|13)/.test(e.keyCode)){
-                keys[e.keyCode]();
+console.dir(e.key)
+            if(e.key === "ArrowRight"){
+                keys[e.key]("forward");
+            }else if(e.key === "ArrowLeft"){
+                keys[e.key]("backward");
+            }else if (/(p|f|ArrowDown|Enter)/.test(e.key)){
+                keys[e.key]();
             }
             
         }

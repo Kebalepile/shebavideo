@@ -27,6 +27,7 @@ textarea{
 textarea:hover{
     border:1px solid white;
     border-radius:1px;
+    background-color:#222;
 }
 </style>
 <textarea disabled></textarea>

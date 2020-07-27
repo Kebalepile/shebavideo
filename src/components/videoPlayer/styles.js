@@ -203,7 +203,7 @@ export default () => {
         width:100%;
         border:none;
         cursor:pointer;
-        color:black;
+        color: #ffff;
         background-color:transparent;
         text-decoration: none;
         display: block;
@@ -211,7 +211,6 @@ export default () => {
         }
     /* Change color of dropup links on hover */
     .dropup-content button:hover {
-        color: #ffff;
         background-color: #222;
     }
     /* Affects the picture in picture svg */

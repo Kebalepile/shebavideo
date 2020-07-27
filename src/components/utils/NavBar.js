@@ -83,8 +83,7 @@ temp.innerHTML = `
     }
 
     .switch {
-        grid-column:4;
-        
+        grid-column:3;
         position: relative;
         display: inline-block;
         width: 50px;
@@ -106,7 +105,7 @@ temp.innerHTML = `
         outline:1px solid #222;
     }
     .upload-wrapper {
-        grid-column:2;
+        grid-column:4;
         position: relative;
         width:30px;
       }
@@ -128,14 +127,14 @@ temp.innerHTML = `
 
 </style>
 <nav> 
-    <label  class="switch">
+    <label  class="switch" title="autoplay">
         <input type="checkbox"  id="autoplay"/>
         <span class="slider round"></span>
     </label>
 
-    <div class=upload-wrapper">
+    <div class="upload-wrapper">
         <input type="file" multiple accept="video/*" id="upload" />
-        <label class="uploadbtn" for="upload">${upload}</label>
+        <label class="uploadbtn" for="upload" >${upload}</label>
     </div>
 
     <button id="about" class="aboutbtn">About</button>
