@@ -129,10 +129,13 @@ class PlayList extends HTMLElement {
         video.src = source.src;
         video.currentTime += 2; //seconds.
         video.onloadedmetadata = () => {
-            
+            // convert seconds to hours
             let hours = Math.floor(video.duration / 60);
+            // convert seconds to minutes
             let minutes = Math.floor(video.duration / 60) >= 60 ? Math.floor((video.duration / 60) % 60) : Math.floor(video.duration / 60);
-            let seconds = Math.floor(video.duration - Math.floor(video.duration / 60) * 60); //ok
+            // rounding seconds to the nearest 10 (downwards)
+            let seconds = Math.floor(video.duration - Math.floor(video.duration / 60) * 60); 
+            // holds video time length
             let duration;
 
             if (seconds < 10) seconds = `0${seconds}`;
@@ -163,6 +166,7 @@ class PlayList extends HTMLElement {
         component.classList.add('nextVideo');
         component.id = source.id;
         component.setAttribute('data-name', source.name);
+        component.setAttribute('title',source.name);
         component.onclick = e => {
             // actually your click on the video element instead of article element.
             // e.target is <video></video>.
