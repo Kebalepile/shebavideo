@@ -70,7 +70,7 @@ class PlayList extends HTMLElement {
      * @param {this} playlist
      * @description listens for changes to redux store, removes stale video(s) already viewed by user using auto load.
      */
-    updateUI (playlist) {
+    updateUI(playlist) {
         return () => {
             let state = getState();
             let videoListComponent = playlist.shadowRoot.querySelector('#videoPlaylist');
@@ -78,14 +78,14 @@ class PlayList extends HTMLElement {
             let videosinUiIds = videoComponents.map(videoComponent => videoComponent.getAttribute('id'));
             let videosInStateIds = state.videos.map(source => source.id);
 
-            if(videosinUiIds.length !== videosInStateIds.length){
+            if (videosinUiIds.length !== videosInStateIds.length) {
 
                 let staleVideosInUiIds = videosinUiIds.filter(id => !videosInStateIds.includes(id));
-                
-                if(staleVideosInUiIds.length > 0) staleVideosInUiIds.forEach(id => {
-                   for (let videoComponent of videoComponents){
-                       if(videoComponent.getAttribute('id') === id) videoListComponent.removeChild(videoComponent);
-                   }
+
+                if (staleVideosInUiIds.length > 0) staleVideosInUiIds.forEach(id => {
+                    for (let videoComponent of videoComponents) {
+                        if (videoComponent.getAttribute('id') === id) videoListComponent.removeChild(videoComponent);
+                    }
                 });
 
             }
@@ -134,7 +134,7 @@ class PlayList extends HTMLElement {
             // convert seconds to minutes
             let minutes = Math.floor(video.duration / 60) >= 60 ? Math.floor((video.duration / 60) % 60) : Math.floor(video.duration / 60);
             // rounding seconds to the nearest 10 (downwards)
-            let seconds = Math.floor(video.duration - Math.floor(video.duration / 60) * 60); 
+            let seconds = Math.floor(video.duration - Math.floor(video.duration / 60) * 60);
             // holds video time length
             let duration;
 
@@ -161,12 +161,11 @@ class PlayList extends HTMLElement {
         }
 
 
-
         const component = document.createElement('article');
         component.classList.add('nextVideo');
         component.id = source.id;
         component.setAttribute('data-name', source.name);
-        component.setAttribute('title',source.name);
+        component.setAttribute('title', source.name);
         component.onclick = e => {
             // actually your click on the video element instead of article element.
             // e.target is <video></video>.

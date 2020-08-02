@@ -1,7 +1,7 @@
 import fullScreen from "./svg/full_screen.svg";
 import volume from "./svg/volume.svg";
 import skipBack from "./svg/skipback.svg";
-import playBtn from "./svg/playbutton.svg";
+import pauseBtn from "./svg/pause_btn.svg";
 import skipAhead from "./svg/skipahead.svg";
 import settings from "./svg/settings.svg";
 export default (dropMenu) => {
@@ -20,7 +20,7 @@ export default (dropMenu) => {
         ${skipBack}
     </button>
     <button name="playbtn">
-        ${playBtn}
+        ${pauseBtn}
     </button>
     <button name="skipahead">
         ${skipAhead}

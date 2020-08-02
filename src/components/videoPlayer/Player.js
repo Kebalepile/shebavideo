@@ -3,7 +3,8 @@ import styles from "./styles";
 import controls from "./controls/videoControls";
 import dropMenu from "./controls/dropupMenu";
 import { getState, subscribe, watchNext} from "../../context/player/State";
-
+import playButton from "./controls/svg/playbutton.svg";
+import pauseButton from "./controls/svg/pause_btn.svg";
 const temp = document.createElement('template');
 temp.innerHTML = `
 <style>
@@ -46,8 +47,8 @@ class Player extends HTMLElement {
     keyBoard() {
         const root = this.shadowRoot,
             video = root.querySelector('video'),
+            playBtn = root.querySelector('button[name="playbtn"]'),
             keys = {
-
                 p: pip,
                 f: fullscreen,
                 ArrowDown: playpause,
@@ -70,7 +71,15 @@ class Player extends HTMLElement {
         }
         function playpause() {
 
-            video.paused ? video.play() : video.pause()
+        try{
+            if(video.paused) {
+                video.play() 
+                playBtn.innerHTML = playButton;
+            }else{
+                 video.pause()
+                 playBtn.innerHTML= pauseButton;
+            }
+           } catch (err) { }
 
         }
 
@@ -99,6 +108,19 @@ class Player extends HTMLElement {
         }
       
     }
+    dynamicPlayPause (){
+        const  video = this.shadowRoot.querySelector('video'),
+        playBtn = this.shadowRoot.querySelector('button[name="playbtn"]');
+        try{
+            if(video.paused) {
+                video.play() 
+                playBtn.innerHTML = playButton;
+            }else{
+                 video.pause()
+                 playBtn.innerHTML= pauseButton;
+            }
+           } catch (err) { }
+    }
 
     videoControls() {
         const root = this.shadowRoot,
@@ -110,11 +132,10 @@ class Player extends HTMLElement {
             skipForwardBtn = root.querySelector('button[name="skipahead"'),
             playBtn = root.querySelector('button[name="playbtn"]'),
             toggleVolumeRange = this.toggleHTMLElement();
-
+        
         video.onclick = e => {
             e.stopImmediatePropagation();
-            video.paused ? video.play() : video.pause()
-            playBtn.blur();
+            this.dynamicPlayPause();
         }
         video.oncontextmenu = e => {
             e.preventDefault()
@@ -171,7 +192,7 @@ class Player extends HTMLElement {
 
         playBtn.onclick = e => {
             e.stopImmediatePropagation();
-            video.paused ? video.play() : video.pause()
+            this.dynamicPlayPause();
             playBtn.blur();
         }
         const settingsBtn = root.querySelector('button[name="dropupbtn"]'),
@@ -306,11 +327,13 @@ class Player extends HTMLElement {
      */
     playVideo(source) {
         const self = this.shadowRoot;
+        
         if (source) {
           
             const video = self.querySelector('video');
             video.src = source;
             video.autoplay = true;
+            this.dynamicPlayPause();
 
         }
     }
