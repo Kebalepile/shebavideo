@@ -1,4 +1,4 @@
-# shebavideo player
+# shebavideo player [![pas](https://img.shields.io/static/v1?&message=ProgressiveApp.Store&color=74b9ff&style=flat&label=Follow%20sheba%20video%20player%20at)](https://progressiveapp.store/pwa/sheba-video-player)
 
 webapp video player with built in keyboard control picture in picture mode autoplay and speed extension up to 5x speed
 
