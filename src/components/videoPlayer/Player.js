@@ -11,7 +11,7 @@ temp.innerHTML = `
     ${styles()}
 </style>
 <div id="videoPlayer"> 
-    <video ></video>
+    <video controlsList="nodownload"></video>
     ${controls(dropMenu())}
 </div>
 `;
