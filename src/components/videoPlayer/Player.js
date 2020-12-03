@@ -11,7 +11,9 @@ temp.innerHTML = `
     ${styles()}
 </style>
 <div id="videoPlayer"> 
-    <video controlsList="nodownload"></video>
+    <video controlsList="nodownload">
+      <source src="https://www.w3schools.com/jsref/movie.mp4" type="video/mp4">
+    </video>
     ${controls(dropMenu())}
 </div>
 `;
@@ -323,15 +325,19 @@ class Player extends HTMLElement {
 
     /**
      * @param {blob} source
+     * @param {string} type
      * @description sets parameter as video.src and autoplay video.
      */
-    playVideo(source) {
+    playVideo(source,type) {
         const self = this.shadowRoot;
         
         if (source) {
           
-            const video = self.querySelector('video');
-            video.src = source;
+            const c = self.querySelector('video').children;
+            for( i = 0; i < c; i++){
+                c.src = source;
+                c.type = type;
+            }
             video.autoplay = true;
             this.dynamicPlayPause();
 
@@ -347,7 +353,7 @@ class Player extends HTMLElement {
             const state = getState();
             
             if (state.watch !== null) {
-                self.playVideo(state.watch['src']);
+                self.playVideo(state.watch['src'],state.watch['type']);
             }
            
 
