@@ -1,0 +1,30 @@
+{
+
+    "short_name": "sheba video player",
+    "name": "sheba video",
+    "description":"webapp video player with built in keyboard control picture in picture mode autoplay and speed extension up to 5x speed",
+    "author": "K.T Motshoana",
+    "lang": "en-US",
+    "start_url": ".",
+    "background_color": "#222",
+    "theme_color" :"#006eff",
+    "scope": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/icons/144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/icons/192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src" : "/icons/512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
