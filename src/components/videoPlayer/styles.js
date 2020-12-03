@@ -14,14 +14,17 @@ export default () => {
         font-family: customFont;
     }
 
-    /*mobile version*/
+    /*default version*/
     #videoPlayer{
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
       width:100%;
       height:350px;
       display:grid;
       grid-template-columns:repeat(12,auto);
       grid-template-rows: repeat(12, auto);
-      grip-gap:2px;
+      z-index:3;
     }
     @media only screen and (min-width:600px){
       #videoPlayer{
@@ -59,7 +62,7 @@ export default () => {
         height:100%;
         grid-column:1/13;
         grid-row:1/12;
-         cursor:pointer;
+        cursor:pointer;
     }
     video:hover{
         border:1px solid white;
