@@ -31,7 +31,7 @@ temp.innerHTML = `
             }
         }
 </style>
-<footer >&copy; 2020 KT Motshoana</footer>
+<footer >&copy; 2020 - 2021 KT Motshoana</footer>
 `;
 
 class Footer extends HTMLElement {
