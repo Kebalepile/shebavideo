@@ -14,17 +14,13 @@ export default () => {
         font-family: customFont;
     }
 
-    /*default version*/
+    /*mobile version*/
     #videoPlayer{
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      top: 0;
       width:100%;
       height:350px;
       display:grid;
       grid-template-columns:repeat(12,auto);
       grid-template-rows: repeat(12, auto);
-      z-index:3;
     }
     @media only screen and (min-width:600px){
       #videoPlayer{
