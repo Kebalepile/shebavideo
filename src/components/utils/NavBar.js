@@ -172,10 +172,10 @@ class Navbar extends HTMLElement {
      */
     upload(e) {
 
-        const files = e.target.files,
+           const files = e.target.files,
             videos = [],
-            allowedVideoFormats = /\.(avi|divx|flv|mkv|mov|mp4|mpeg|mpg|ogm|ogv|ogx|rm|rmvb|smil|webm|wmv|xvid)$/,
-            allowedVideoTypes = /^video\/(avi|divx|flv|mkv|mov|mp4|mpeg|mpg|ogm|ogv|ogx|rm|rmvb|smil|webm|wmv|xvid)$/;
+            allowedVideoFormats = /\.(avi|flv|mov|mp4|mpeg|mpg|ogv|webm|wmv|mp2)$/,
+			allowedVideoTypes = /^video\/(avi|flv|mov|mp4|mpeg|mpg|ogv|webm|wmv|mp2)$/;
 
         for (let i = 0; i < files.length; i++) {
 
@@ -188,13 +188,12 @@ class Navbar extends HTMLElement {
                 videos.push({
                     name,
                     size,
+                    type,
                     id: nanoid(),
-                    type:`video/${type}`,
                     src: URL.createObjectURL(new Blob([file], { type }))
                 });
             }
         }
-
         uploadVideos(videos);
         e.target.value = null;
         e.target.blur();
