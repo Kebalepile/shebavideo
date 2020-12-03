@@ -186,10 +186,10 @@ class Navbar extends HTMLElement {
 
             if (formatIsOkay && typeIsOkay) {
                 videos.push({
-                    id: nanoid(),
                     name,
-                    type,
                     size,
+                    id: nanoid(),
+                    type:`video/${type}`,
                     src: URL.createObjectURL(new Blob([file], { type }))
                 });
             }
